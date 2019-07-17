@@ -1,0 +1,47 @@
+group 'top.zaqqmm.oss'
+version '1.0-SNAPSHOT'
+
+
+apply plugin: 'maven'
+apply plugin: 'idea'
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    mavenCentral()
+}
+
+ext{
+    nettyVersion = '4.1.37.Final'
+    logbackVersion = "1.2.3"
+
+
+}
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+
+    group = 'top.zaqqmm.oss'
+    version = '1.0-SNAPSHOT'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        mavenCentral()
+    }
+    dependencies {
+        compile("ch.qos.logback:logback-core:${logbackVersion}")
+        compile("ch.qos.logback:logback-access:${logbackVersion}")
+        compile("ch.qos.logback:logback-classic:${logbackVersion}")
+    }
+
+}
