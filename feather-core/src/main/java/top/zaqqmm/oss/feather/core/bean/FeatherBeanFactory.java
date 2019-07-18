@@ -3,7 +3,7 @@ package top.zaqqmm.oss.feather.core.bean;
 /**
  * @author zaqqmm
  * @description: ${DESCRIPTION}
- * @create 2019-07-15 10:24
+ * @create 2019-07-15 19:24
  */
 public interface FeatherBeanFactory {
 

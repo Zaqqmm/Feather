@@ -5,7 +5,7 @@ import java.util.Properties;
 /**
  * @author zaqqmm
  * @description: ${DESCRIPTION}
- * @create 2019-07-16 16:17
+ * @create 2019-07-16 19:17
  */
 public abstract class AbstractConfiguration {
     /**

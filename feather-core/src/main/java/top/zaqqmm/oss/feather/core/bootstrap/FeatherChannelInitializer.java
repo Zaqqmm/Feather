@@ -12,7 +12,7 @@ import top.zaqqmm.oss.feather.core.handle.HttpDispatcher;
 /**
  * @author zaqqmm
  * @description: ${DESCRIPTION}
- * @create 2019-07-17 13:26
+ * @create 2019-07-17 12:26
  */
 public class FeatherChannelInitializer extends ChannelInitializer<Channel> {
     private final HttpDispatcher httpDispatcher = new HttpDispatcher() ;

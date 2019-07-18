@@ -1,16 +1,25 @@
 package top.zaqqmm.oss.feather.core.bean;
 
+import top.zaqqmm.oss.feather.core.bean.annotation.Component;
+import top.zaqqmm.oss.feather.core.bean.reader.ClassReader;
+import top.zaqqmm.oss.feather.core.bean.reader.DefaultClassReader;
+import top.zaqqmm.oss.feather.core.bean.reader.Scanner;
+import top.zaqqmm.oss.feather.core.config.FeatherConfig;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.ServiceLoader;
+import java.util.Set;
 
 /**
  * @author zaqqmm
  * @description: ${DESCRIPTION}
- * @create 2019-07-15 10:19
+ * @create 2019-07-15 19:19
  */
 public class FeatherBeanManager {
-    private void FeatherBeanManager(){}
+    private void FeatherBeanManager() {
+    }
 
     public static volatile FeatherBeanManager featherBeanManager;
     private static FeatherBeanFactory featherBeanFactory;
@@ -28,17 +37,22 @@ public class FeatherBeanManager {
         return featherBeanManager;
     }
 
-    public FeatherBeanFactory init() {
-        if(featherBeanFactory !=null){
-            return  featherBeanFactory;
-        }
+    public void init() throws IllegalAccessException, InstantiationException {
         resolveFeatherBeanFactory();
         if (featherBeanFactory == null) {
-            //todo
-
             featherBeanFactory = new FeatherDefaultBeanFactory();
         }
-        return featherBeanFactory;
+        Scanner.Builder builder = new Scanner.Builder();
+        Scanner scanner = builder.annotation(Component.class)
+                .packageName(FeatherConfig.getInstance().getRootPackageName())
+                .build();
+        Set<Class<?>> classes = DefaultClassReader.getInstance().readClasses(scanner);
+        for (Class<?> clazz : classes) {
+            Object instance;
+            instance = clazz.newInstance();
+            featherBeanFactory.register(instance) ;
+        }
+
     }
 
     private void resolveFeatherBeanFactory() {
@@ -60,10 +74,10 @@ public class FeatherBeanManager {
     }
 
     public Object getBean(String name) throws Exception {
-        return featherBeanFactory.getBean(name) ;
+        return featherBeanFactory.getBean(name);
     }
 
-    public void releaseBean(){
+    public void releaseBean() {
         featherBeanFactory.releaseBean();
     }
 }

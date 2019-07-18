@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * @author zaqqmm
  * @description: ${DESCRIPTION}
- * @create 2019-07-16 16:16
+ * @create 2019-07-16 19:16
  */
 public class ConfigurationHolder {
     private static Map<String , AbstractConfiguration> config = new HashMap<>(8);

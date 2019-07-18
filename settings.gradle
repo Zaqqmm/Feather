@@ -3,4 +3,5 @@ include 'feather-core'
 include 'feather-context'
 include 'feather-starter'
 include 'feather-autoconfig'
+include 'feather-demo'
 
