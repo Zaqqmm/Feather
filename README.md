@@ -8,7 +8,7 @@ If you are interested, please click [start](https://github.com/Zaqqmm/Feather/st
 
 ## Features
 
-- [ ] `IOC` BeanFactory.
+- [ ] Default `IOC` BeanFactory.
 - [ ] auto configure
 - [ ] interceptor pipline
 - [ ] exception handle
