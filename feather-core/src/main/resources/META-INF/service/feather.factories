@@ -1,2 +1,0 @@
-top.zaqqmm.oss.autoconfigure.EnableAutoConfiguration=\
-org.springframework.boot.actuate.autoconfigure.amqp.RabbitHealthIndicatorAutoConfiguration,

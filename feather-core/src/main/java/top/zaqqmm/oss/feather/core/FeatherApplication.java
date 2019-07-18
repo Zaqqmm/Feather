@@ -26,7 +26,7 @@ public class FeatherApplication {
         //this.primarySources = new LinkedHashSet<>(Arrays.asList(primarySource));
         FeatherBootstrap.init(primarySource);
     }
-    private void run(String... args){
+    private void run(String... args) throws Exception{
         NettyBootstrap.start();
     }
 
