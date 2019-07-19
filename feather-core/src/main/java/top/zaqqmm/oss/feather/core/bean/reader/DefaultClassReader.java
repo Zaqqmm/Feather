@@ -18,8 +18,6 @@ public class DefaultClassReader  implements ClassReader {
     private static final Logger LOGGER = LoggerBuilder.getLogger(DefaultClassReader.class);
     private static volatile DefaultClassReader classReader;
 
-    //private Map<String, Set<Class<?>>> packageClassMap = new HashMap<>();
-
     private DefaultClassReader() {
     }
 
@@ -42,20 +40,6 @@ public class DefaultClassReader  implements ClassReader {
         Class<? extends Annotation> annotation = scanner.getAnnotation();
         Class<?> parent = scanner.getParent();
         boolean recursive = scanner.isRecursive();
-        if (packageName != null && !"".equals(packageName)) {
-            classes = readClassesByPackage(packageName);
-        }
-        return null;
-    }
-
-    private Set<Class<?>> baseClassesScan(String packageName) {
-        boolean recursive = true;
-        String packageDirName = packageName.replace('.', '/');
-        Enumeration<URL> dirs;
-        return null;
-    }
-
-    private Set<Class<?>>findClassByPackage(){
         return null;
     }
 }

@@ -9,7 +9,7 @@ import java.util.Map;
  * @create 2019-07-16 19:16
  */
 public class ConfigurationHolder {
-    private static Map<String , AbstractConfiguration> config = new HashMap<>(8);
+    private static Map<String , AbstractConfiguration> config = new HashMap<>(16);
 
     public static void addConfiguration(String key,AbstractConfiguration configuration){
         config.put(key, configuration);
