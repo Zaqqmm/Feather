@@ -15,30 +15,28 @@ public interface FeatherInterceptor {
      *
      * @param context
      * @param paramMap
-     * @param count
      * @param prioritized
      * @param args
      * @throws Throwable
      */
-    void entry(FeatherContext context, ParamMap paramMap , int count, boolean prioritized,
+    void entry(FeatherContext context, ParamMap paramMap, boolean prioritized,
                Object... args) throws Throwable;
 
     /**
-     * Means finish of{@link #entry(FeatherContext, ParamMap, int, boolean, Object...)}
+     * Means finish of{@link #entry(FeatherContext, ParamMap, boolean, Object...)}
      *
      * @param context
      * @param paramMap
-     * @param count
      * @param prioritized
      * @param args
      * @throws Throwable
      */
-    void fireEntry(FeatherContext context, ParamMap paramMap , int count, boolean prioritized,
+    void fireEntry(FeatherContext context, ParamMap paramMap , boolean prioritized,
                    Object... args) throws Throwable;
 
 
-    void exit(FeatherContext context, ParamMap paramMap, int count, Object... args);
+    void exit(FeatherContext context, ParamMap paramMap, Object... args);
 
-    void fireExit(FeatherContext context, ParamMap paramMap, int count, Object... args);
+    void fireExit(FeatherContext context, ParamMap paramMap, Object... args);
 
 }

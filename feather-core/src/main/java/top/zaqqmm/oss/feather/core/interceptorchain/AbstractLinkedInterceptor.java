@@ -13,22 +13,22 @@ public abstract class AbstractLinkedInterceptor implements FeatherInterceptor {
     private AbstractLinkedInterceptor next = null;
 
     @Override
-    public void fireEntry(FeatherContext context, ParamMap paramMap, int count, boolean prioritized, Object... args) throws Throwable {
+    public void fireEntry(FeatherContext context, ParamMap paramMap, boolean prioritized, Object... args) throws Throwable {
         if (next != null) {
-            next.transformEntry(context, paramMap, count, prioritized, args);
+            next.transformEntry(context, paramMap, prioritized, args);
         }
     }
 
     @Override
-    public void fireExit(FeatherContext context, ParamMap paramMap, int count, Object... args) {
+    public void fireExit(FeatherContext context, ParamMap paramMap, Object... args) {
         if (next != null) {
-            next.exit(context, paramMap, count, args);
+            next.exit(context, paramMap, args);
         }
     }
 
-    void transformEntry(FeatherContext context, ParamMap paramMap, int count, boolean prioritized, Object... args)
+    void transformEntry(FeatherContext context, ParamMap paramMap, boolean prioritized, Object... args)
             throws Throwable {
-        entry(context, paramMap, count, prioritized, args);
+        entry(context, paramMap, prioritized, args);
     }
 
     public AbstractLinkedInterceptor getNext() {

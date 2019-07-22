@@ -21,6 +21,7 @@ public class HttpDispatcher extends SimpleChannelInboundHandler<DefaultHttpReque
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, DefaultHttpRequest msg) throws Exception {
+        //todo
 
     }
 }

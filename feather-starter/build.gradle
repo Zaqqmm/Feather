@@ -1,6 +1,5 @@
 dependencies {
     compile project(':feather-context')
     compile project(':feather-core')
-    compile project(':feather-ioc')
     compile project(':feather-autoconfig')
 }

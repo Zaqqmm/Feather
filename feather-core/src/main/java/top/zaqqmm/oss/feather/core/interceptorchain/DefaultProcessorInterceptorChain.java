@@ -12,14 +12,14 @@ public class DefaultProcessorInterceptorChain extends ProcessorInterceptorChain 
     AbstractLinkedInterceptor first = new AbstractLinkedInterceptor() {
 
         @Override
-        public void entry(FeatherContext context, ParamMap paramMap, int count, boolean prioritized, Object... args)
+        public void entry(FeatherContext context, ParamMap paramMap, boolean prioritized, Object... args)
                 throws Throwable {
-            super.fireEntry(context, paramMap, count, prioritized, args);
+            super.fireEntry(context, paramMap, prioritized, args);
         }
 
         @Override
-        public void exit(FeatherContext context, ParamMap paramMap, int count, Object... args) {
-            super.fireExit(context, paramMap, count, args);
+        public void exit(FeatherContext context, ParamMap paramMap, Object... args) {
+            super.fireExit(context, paramMap, args);
         }
 
     };
@@ -35,12 +35,12 @@ public class DefaultProcessorInterceptorChain extends ProcessorInterceptorChain 
     }
 
     @Override
-    public void entry(FeatherContext context, ParamMap paramMap, int count, boolean prioritized, Object... args) throws Throwable {
+    public void entry(FeatherContext context, ParamMap paramMap, boolean prioritized, Object... args) throws Throwable {
 
     }
 
     @Override
-    public void exit(FeatherContext context, ParamMap paramMap, int count, Object... args) {
+    public void exit(FeatherContext context, ParamMap paramMap, Object... args) {
 
     }
 

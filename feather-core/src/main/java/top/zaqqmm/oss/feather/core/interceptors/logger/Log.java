@@ -11,12 +11,12 @@ import top.zaqqmm.oss.feather.core.interceptorchain.AbstractLinkedInterceptor;
  */
 public class Log extends AbstractLinkedInterceptor {
     @Override
-    public void entry(FeatherContext context, ParamMap paramMap, int count, boolean prioritized, Object... args) throws Throwable {
+    public void entry(FeatherContext context, ParamMap paramMap, boolean prioritized, Object... args) throws Throwable {
         //todo
     }
 
     @Override
-    public void exit(FeatherContext context, ParamMap paramMap, int count, Object... args) {
+    public void exit(FeatherContext context, ParamMap paramMap, Object... args) {
         //todo
     }
 }

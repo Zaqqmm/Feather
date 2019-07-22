@@ -35,8 +35,8 @@ public class FeatherConfig {
 
     public void setRootPackageName(Class<?> clazz) throws Exception {
         if (clazz.getPackage() == null) {
-            //todo
-            throw new Exception("no pachage");
+            //todo log
+            throw new Exception("no package");
         }
         this.rootPackageName = clazz.getPackage().toString();
     }

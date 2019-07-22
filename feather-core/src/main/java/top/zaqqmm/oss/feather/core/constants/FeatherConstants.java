@@ -19,7 +19,7 @@ public class FeatherConstants {
     }
 
     public static final class SystemProperties {
-        //todo
+        //todo logo
         /*public static final String LOGO = "\n" +
                 "\t\t\t ▄████▄   ██▓ ▄████▄   ▄▄▄      ▓█████▄  ▄▄▄      \n" +
                 "\t\t\t▒██▀ ▀█  ▓██▒▒██▀ ▀█  ▒████▄    ▒██▀ ██▌▒████▄    \n" +
